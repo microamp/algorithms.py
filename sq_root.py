@@ -15,9 +15,10 @@ first_guess = lambda n: n / 2
 def sqrt(n, f=None, f_deriv=None, guess=None):
     # print("guess: {0}".format(guess))
     new_guess = guess - (f(guess) / f_deriv(guess))
-    return (round(new_guess, ACCURACY)
-            if round(guess, ACCURACY) == round(new_guess, ACCURACY) else
-            sqrt(n, f=f, f_deriv=f_deriv, guess=new_guess))
+    rounded = round(new_guess, ACCURACY)
+    if rounded == round(guess, ACCURACY):
+        return round(new_guess, ACCURACY)
+    return sqrt(n, f=f, f_deriv=f_deriv, guess=new_guess)
 
 
 def square_root(n):

@@ -10,8 +10,8 @@ http://ow.ly/GuPXM
 http://en.wikipedia.org/wiki/Longest_increasing_subsequence
 """
 
-from copy import copy
 from itertools import filterfalse
+from operator import add
 
 
 def lt_all(subseqs, item):
@@ -23,16 +23,38 @@ def gt_all(subseqs, item):
 
 
 def largest_seq(subseqs):
-    return max(subseqs, key=len)
+    try:
+        return max(subseqs, key=len)
+    except ValueError:
+        return None
 
 
 def largest_end_seq(subseqs, item):
-    return max(filter(lambda s: s[-1] < item, subseqs),
-               key=lambda s: s[-1])
+    try:
+        return max(filter(lambda s: s[-1] < item, subseqs),
+                   key=lambda s: s[-1])
+    except ValueError:
+        return None
 
 
 def filter_seqs(subseqs, length):
     return list(filterfalse(lambda s: len(s) == length, subseqs))
+
+
+def _lis(seq, subseqs=None):
+    if not seq:
+        return max(subseqs, key=len)
+    else:
+        head, tail = seq[0], seq[1:]
+        if lt_all(subseqs, head):
+            return _lis(tail, add(subseqs, [[head]]))
+        elif gt_all(subseqs, head):
+            expanded = largest_seq(subseqs) + [head]
+            return _lis(tail, add(subseqs, [expanded]))
+        else:
+            expanded = largest_end_seq(subseqs, head) + [head]
+            return _lis(tail, add(filter_seqs(subseqs, len(expanded)),
+                                  [expanded]))
 
 
 def lis(seq):
@@ -46,17 +68,4 @@ def lis(seq):
     all other lists of same length as that of this modified list.
     (link: http://ow.ly/GuPXM)
     """
-    subseqs = []
-    for item in seq:
-        if lt_all(subseqs, item):
-            subseqs.append([item])
-        elif gt_all(subseqs, item):
-            _seq = copy(largest_seq(subseqs))
-            _seq.append(item)
-            subseqs.append(_seq)
-        else:
-            _seq = copy(largest_end_seq(subseqs, item))
-            _seq.append(item)
-            subseqs = filter_seqs(subseqs, len(_seq))
-            subseqs.append(_seq)
-    return max(subseqs, key=len)
+    return _lis(seq, subseqs=[])

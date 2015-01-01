@@ -7,6 +7,9 @@ from sq_root import square_root
 from binary_search import binary_search
 from longest_common_subsequence import lcs
 from longest_increasing_subsequence import lis
+from permutations import perm
+from brackets_combinations import brackets
+from powerset import power_set
 
 
 class TestAlgorithms(unittest.TestCase):
@@ -40,13 +43,13 @@ class TestAlgorithms(unittest.TestCase):
         self.assertIsNone(binary_search([1, 5, 10], 100))
         self.assertIsNone(binary_search([1, 5, 10], -1))
 
-    def test_longest_common_sequence(self):
+    def test_longest_common_subsequence(self):
         self.assertEqual(lcs("waaaa", "bbbbasfaaewra"), "aaaa")
         self.assertEqual(lcs("abc", "def"), "")
         self.assertEqual(lcs("123", "01234"), "123")
         self.assertEqual(lcs("abcd", "dcba"), "c")
 
-    def test_longest_increasing_sequence(self):
+    def test_longest_increasing_subsequence(self):
         self.assertListEqual(
             lis([0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]),
             [0, 2, 6, 9, 11, 15]
@@ -55,6 +58,62 @@ class TestAlgorithms(unittest.TestCase):
             lis([1, 10, 100, 1000, 2, 3, 4, 5, 10, 20, 6, 7, 8]),
             [1, 2, 3, 4, 5, 6, 7, 8]
         )
+
+    def test_permutations(self):
+        self.assertListEqual(perm([1, 2, 3, 4]),
+                             [[1, 2, 4, 3],
+                              [1, 3, 2, 4],
+                              [1, 3, 4, 2],
+                              [1, 4, 2, 3],
+                              [1, 4, 3, 2],
+                              [2, 1, 3, 4],
+                              [2, 1, 4, 3],
+                              [2, 3, 1, 4],
+                              [2, 3, 4, 1],
+                              [2, 4, 1, 3],
+                              [2, 4, 3, 1],
+                              [3, 1, 2, 4],
+                              [3, 1, 4, 2],
+                              [3, 2, 1, 4],
+                              [3, 2, 4, 1],
+                              [3, 4, 1, 2],
+                              [3, 4, 2, 1],
+                              [4, 1, 2, 3],
+                              [4, 1, 3, 2],
+                              [4, 2, 1, 3],
+                              [4, 2, 3, 1],
+                              [4, 3, 1, 2],
+                              [4, 3, 2, 1]])
+        self.assertListEqual(perm(["A", "B", "C"]),
+                             [["A", "C", "B"],
+                              ["B", "A", "C"],
+                              ["B", "C", "A"],
+                              ["C", "A", "B"],
+                              ["C", "B", "A"]])
+
+    def test_bracket_combinations(self):
+        self.assertListEqual(brackets(1),
+                             ["()"])
+        self.assertListEqual(brackets(2),
+                             ["(())",
+                              "()()"])
+        self.assertListEqual(brackets(3),
+                             ["((()))",
+                              "(()())",
+                              "(())()",
+                              "()(())",
+                              "()()()"])
+
+    def test_power_set(self):
+        self.assertSetEqual(power_set({"A", "B", "C"}),
+                            {frozenset({"A", "B", "C"}),
+                             frozenset({"A", "B"}),
+                             frozenset({"A", "C"}),
+                             frozenset({"B", "C"}),
+                             frozenset({"A"}),
+                             frozenset({"B"}),
+                             frozenset({"C"}),
+                             frozenset()})
 
 
 if __name__ == "__main__":
