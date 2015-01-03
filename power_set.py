@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Finding the powerset of a set
+Power set
 
 * Links:
 Power set:

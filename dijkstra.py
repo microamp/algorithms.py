@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Dijkstra's shortest path between two nodes
+Dijkstra's algorithm
 
 Links:
 * Dijkastra's algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
@@ -24,8 +24,6 @@ def shortest_paths(graph, nodes=None, dist=None, prev=None, visited=None):
         for n in graph[node]:
             new_dist = dist[node] + graph[node][n]
             if n not in dist or new_dist < dist[n]:
-                # print("detected new shortest distance to '{0}': {1} "
-                #       "(previous node: '{2}')".format(n, new_dist, node))
                 dist[n], prev[n] = new_dist, node
         return shortest_paths(graph, nodes={n for n in graph[node]},
                               dist=dist, prev=prev,

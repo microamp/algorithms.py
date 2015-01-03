@@ -10,7 +10,6 @@ https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
 
 
 def lcs(x, y):
-    # print("x: {x}, y: {y}".format(x=x, y=y))
     if not x or not y:
         return ""
     else:

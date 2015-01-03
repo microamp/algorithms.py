@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Find all permutations of array
+Permutation
 
 Links:
 * Permutation:

@@ -66,6 +66,6 @@ def lis(seq):
     3. If A[i] is in between, we will find a list with largest end element that
     is smaller than A[i]. Clone and extend this list by A[i]. We will discard
     all other lists of same length as that of this modified list.
-    (link: http://ow.ly/GuPXM)
+    (http://ow.ly/GuPXM)
     """
     return _lis(seq, subseqs=[])

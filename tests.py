@@ -3,13 +3,17 @@
 import unittest
 
 from dijkstra import dijkstra
-from sq_root import square_root
+from sqrt import sqrt
 from binary_search import binary_search
-from longest_common_subsequence import lcs
-from longest_increasing_subsequence import lis
-from permutations import perm
-from brackets_combinations import brackets
-from powerset import power_set
+from lcs import lcs
+from lis import lis
+from permutation import perm
+from well_formed_brackets import brackets
+from power_set import power_set
+from quicksort import quicksort
+from mergesort import mergesort
+from same_digits_next_bigger import next_bigger
+from phonewords import phonewords
 
 
 class TestAlgorithms(unittest.TestCase):
@@ -29,9 +33,9 @@ class TestAlgorithms(unittest.TestCase):
         self.assertListEqual(path, ["a", "c", "f", "e"])
 
     def test_sq_root(self):
-        self.assertEqual(square_root(0.4), 0.632)
-        self.assertEqual(square_root(100), 10.0)
-        self.assertEqual(square_root(12), 3.464)
+        self.assertEqual(sqrt(0.4), 0.632)
+        self.assertEqual(sqrt(100), 10.0)
+        self.assertEqual(sqrt(12), 3.464)
 
     def test_binary_search(self):
         self.assertEqual(binary_search([1, 3, 4, 6, 8, 9, 11], 4), 2)
@@ -114,6 +118,33 @@ class TestAlgorithms(unittest.TestCase):
                              frozenset({"B"}),
                              frozenset({"C"}),
                              frozenset()})
+
+    def test_quicksort(self):
+        self.assertListEqual(quicksort([3, 7, 8, 5, 2, 1, 9, 5, 4]),
+                             [1, 2, 3, 4, 5, 5, 7, 8, 9])
+
+    def test_mergesort(self):
+        self.assertListEqual(mergesort([6, 5, 3, 1, 8, 7, 2, 4]),
+                             [1, 2, 3, 4, 5, 6, 7, 8])
+
+    def test_same_digits_next_bigger(self):
+        self.assertEqual(next_bigger(38276),
+                         38627)
+        self.assertEqual(next_bigger(123456784987654321),
+                         123456785123446789)
+
+        self.assertIsNone(next_bigger(1111))
+        self.assertIsNone(next_bigger(54321))
+
+    def test_phonewords(self):
+        self.assertListEqual(phonewords("10-34"),
+                             ["10DG", "10DH", "10DI", "10EG", "10EH", "10EI",
+                              "10FG", "10FH", "10FI"])
+        self.assertListEqual(phonewords("1202"),
+                             ["1A0A", "1A0B", "1A0C", "1B0A", "1B0B", "1B0C",
+                              "1C0A", "1C0B", "1C0C"])
+        self.assertListEqual(phonewords("000-111"),
+                             ["000111"])
 
 
 if __name__ == "__main__":
