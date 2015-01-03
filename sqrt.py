@@ -18,7 +18,8 @@ def _sqrt(n, f=None, f_deriv=None, guess=None):
     rounded = round(new_guess, ACCURACY)
     if rounded == round(guess, ACCURACY):
         return round(new_guess, ACCURACY)
-    return _sqrt(n, f=f, f_deriv=f_deriv, guess=new_guess)
+    else:
+        return _sqrt(n, f=f, f_deriv=f_deriv, guess=new_guess)
 
 
 def sqrt(n):
