@@ -14,6 +14,8 @@ from quicksort import quicksort
 from mergesort import mergesort
 from same_digits_next_bigger import next_bigger
 from phonewords import phonewords
+from mix_sets import mix_sets
+from palindrome_insertions import palindrome_insertions
 
 
 class TestAlgorithms(unittest.TestCase):
@@ -145,6 +147,22 @@ class TestAlgorithms(unittest.TestCase):
                               "1C0A", "1C0B", "1C0C"])
         self.assertListEqual(phonewords("000-111"),
                              ["000111"])
+
+    def test_mix_sets(self):
+        self.assertListEqual(mix_sets([["A", "B"], ["C"], ["D", "E"]]),
+                             ["ACD", "ACE", "BCD", "BCE"])
+
+    def test_palindrome_insertions(self):
+        self.assertListEqual(palindrome_insertions("ab"),
+                             ["b"])
+        self.assertListEqual(palindrome_insertions("aa"),
+                             [])
+        self.assertListEqual(palindrome_insertions("abcd"),
+                             ["d", "c", "b"])
+        self.assertListEqual(palindrome_insertions("abcda"),
+                             ["d", "c"])
+        self.assertListEqual(palindrome_insertions("abcde"),
+                             ["e", "d", "c", "b"])
 
 
 if __name__ == "__main__":
