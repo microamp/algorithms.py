@@ -16,6 +16,7 @@ from same_digits_next_bigger import next_bigger
 from phonewords import phonewords
 from mix_sets import mix_sets
 from palindrome_insertions import palindrome_insertions
+from kmp import kmp
 
 
 class TestAlgorithms(unittest.TestCase):
@@ -163,6 +164,18 @@ class TestAlgorithms(unittest.TestCase):
                              ["d", "c"])
         self.assertListEqual(palindrome_insertions("abcde"),
                              ["e", "d", "c", "b"])
+
+    def test_kmp(self):
+        self.assertListEqual(kmp("THIS IS A TEST TEXT", "TEST"),
+                             [10])
+        self.assertListEqual(kmp("AABAACAADAABAAABAA", "AABA"),
+                             [0, 9, 13])
+        self.assertListEqual(kmp("AAAAAAAAAAAAAAAAAB", "AAAAB"),
+                             [13])
+        self.assertListEqual(kmp("ABABABCABABABCABABABC", "ABABAC"),
+                             [])
+        self.assertListEqual(kmp("ABC ABCDAB ABCDABCDABDE", "ABCDABD"),
+                             [15])
 
 
 if __name__ == "__main__":
