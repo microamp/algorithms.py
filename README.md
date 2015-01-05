@@ -29,7 +29,7 @@ Problems
 How to run tests
 ----------------
 
-All tests are in 'tests.py'. Run the following command to test them.
+All tests can be found in [tests.py]((https://github.com/microamp/algorithms.py/blob/master/tests.py)). Run the following command to test them.
 
 ```bash
 python -m tests
