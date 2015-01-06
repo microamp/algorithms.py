@@ -17,6 +17,7 @@ from phonewords import phonewords
 from mix_sets import mix_sets
 from palindrome_insertions import palindrome_insertions
 from kmp import kmp
+from counting_sort import counting_sort
 
 
 class TestAlgorithms(unittest.TestCase):
@@ -176,6 +177,20 @@ class TestAlgorithms(unittest.TestCase):
                              [])
         self.assertListEqual(kmp("ABC ABCDAB ABCDABCDABDE", "ABCDABD"),
                              [15])
+
+    def test_counting_sort(self):
+        self.assertListEqual(counting_sort([9, 8, 7, 6, 5, 4, 3, 2, 1],
+                                           limit=10),
+                             [1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.assertListEqual(counting_sort([1, 1, 1, 1, 1],
+                                           limit=10),
+                             [1, 1, 1, 1, 1])
+        self.assertListEqual(counting_sort([7, 0, 1, 7, 7, 1, 1, 3, 6, 0],
+                                           limit=10),
+                             [0, 0, 1, 1, 1, 3, 6, 7, 7, 7])
+        self.assertListEqual(counting_sort([0, 4, 4, 3, 4, 2, 3, 4, 1, 2],
+                                           limit=10),
+                             [0, 1, 2, 2, 3, 3, 4, 4, 4, 4])
 
 
 if __name__ == "__main__":
