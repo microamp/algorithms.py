@@ -1,7 +1,7 @@
 algorithms.py
 =============
 
-A Python 3 version of @sagivo's [algorithms](https://github.com/sagivo/algorithms) (for fun~~ and profit~~)
+A port of @sagivo's [algorithms](https://github.com/sagivo/algorithms) in Python 3
 
 Problems
 --------
@@ -15,7 +15,7 @@ Problems
 | [Longest common subsequence](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem)                                                                                            | [lcs.py](https://github.com/microamp/algorithms.py/blob/master/lcs.py)                                         |
 | [Quicksort](http://en.wikipedia.org/wiki/Quicksort)                                                                                                                                       | [quicksort.py](https://github.com/microamp/algorithms.py/blob/master/quicksort.py)                             |
 | [Mergesort](https://en.wikipedia.org/wiki/Merge_sort)                                                                                                                                     | [mergesort.py](https://github.com/microamp/algorithms.py/blob/master/mergesort.py)                             |
-| [Counting sort](http://en.wikipedia.org/wiki/Counting_sort)                                                                                                                               | [counting_sort.py(https://github.com/microamp/algorithms.py/blob/master/counting_sort.py)]                     |
+| [Counting sort](http://en.wikipedia.org/wiki/Counting_sort)                                                                                                                               | [counting_sort.py](https://github.com/microamp/algorithms.py/blob/master/counting_sort.py)]                    |
 | Mix and combine sets of cells to list all possible combinations                                                                                                                           | [mix_sets.py](https://github.com/microamp/algorithms.py/blob/master/mix_sets.py)                               |
 | [Finding all combinations of well-formed brackets](http://stackoverflow.com/questions/727707/finding-all-combinations-of-well-formed-brackets)                                            | [well_formed_brackets.py](https://github.com/microamp/algorithms.py/blob/master/well_formed_brackets.py)       |
 | [Phonewords](http://www.mobilefish.com/services/phonenumber_words/phonenumber_words.php)                                                                                                  | [phonewords.py](https://github.com/microamp/algorithms.py/blob/master/phonewords.py)                           |
