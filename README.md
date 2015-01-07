@@ -16,6 +16,7 @@ Problems
 | [Quicksort](http://en.wikipedia.org/wiki/Quicksort)                                                                                                                                       | [quicksort.py](https://github.com/microamp/algorithms.py/blob/master/quicksort.py)                             |
 | [Mergesort](https://en.wikipedia.org/wiki/Merge_sort)                                                                                                                                     | [mergesort.py](https://github.com/microamp/algorithms.py/blob/master/mergesort.py)                             |
 | [Counting sort](http://en.wikipedia.org/wiki/Counting_sort)                                                                                                                               | [counting_sort.py](https://github.com/microamp/algorithms.py/blob/master/counting_sort.py)                     |
+| [Shellsort](http://en.wikipedia.org/wiki/Shellsort)                                                                                                                                       | TODO                                                                                                           |
 | Mix and combine sets of cells to list all possible combinations                                                                                                                           | [mix_sets.py](https://github.com/microamp/algorithms.py/blob/master/mix_sets.py)                               |
 | [Finding all combinations of well-formed brackets](http://stackoverflow.com/questions/727707/finding-all-combinations-of-well-formed-brackets)                                            | [well_formed_brackets.py](https://github.com/microamp/algorithms.py/blob/master/well_formed_brackets.py)       |
 | [Phonewords](http://www.mobilefish.com/services/phonenumber_words/phonenumber_words.php)                                                                                                  | [phonewords.py](https://github.com/microamp/algorithms.py/blob/master/phonewords.py)                           |
@@ -32,7 +33,8 @@ Goals
 
 - Recursion over imperative looping constructs such as `for`/`while`-loops (1)
 - Expressions over stateful methods and mutations
-- Even though neither is easy to achive when programming in OO, I believe mutability should be [opt-in](http://bob.ippoli.to/python-haskell-ep2014/#/mutability), not the other way around.
+
+Even though neither is easy to achive when programming in OO, I believe mutability should be [opt-in](http://bob.ippoli.to/python-haskell-ep2014/#/mutability), not the other way around.
 
 Notes:
 
