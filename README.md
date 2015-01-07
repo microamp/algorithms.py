@@ -32,13 +32,13 @@ Goals
 -----
 
 - Recursion over imperative looping constructs such as `for`/`while`-loops (1)
-- Expressions over stateful methods and mutations
+- Expressions over stateful methods and mutations (whenever possible)
 
-Even though neither is easy to achive when programming in OO, I believe mutability should be [opt-in](http://bob.ippoli.to/python-haskell-ep2014/#/mutability), not the other way around.
+Neither is easy to achive in OO, however, I believe mutability should be [opt-in](http://bob.ippoli.to/python-haskell-ep2014/#/mutability), not the other way around.
 
 Notes:
 
-1. Recursion is not generally considered a good practice in Python. Python is _not_ a functional programming language, and there is no TCO support in CPython after all. The focus here is more on the algorithms despite being implemented in Python.
+1. Recursion is not generally considered a good practice in Python. Python is _not_ a functional programming language, and there is no TCO support in CPython after all. The focus here is, in fact, more on the algorithms despite being implemented in Python.
 
 How to run tests
 ----------------
