@@ -18,6 +18,7 @@ from mix_sets import mix_sets
 from palindrome_insertions import palindrome_insertions
 from kmp import kmp
 from counting_sort import counting_sort
+from game_of_life import tick
 
 
 class TestAlgorithms(unittest.TestCase):
@@ -191,6 +192,17 @@ class TestAlgorithms(unittest.TestCase):
         self.assertListEqual(counting_sort([0, 4, 4, 3, 4, 2, 3, 4, 1, 2],
                                            limit=10),
                              [0, 1, 2, 2, 3, 3, 4, 4, 4, 4])
+
+    def test_game_of_life(self):
+        ticker = tick(((0, 1), (1, 1), (2, 1),), 3)
+        self.assertListEqual(sorted(next(ticker)),
+                             sorted(((1, 2), (1, 0), (1, 1))))
+        self.assertListEqual(sorted(next(ticker)),
+                             sorted(((0, 1), (1, 1), (2, 1),)))
+        self.assertListEqual(sorted(next(ticker)),
+                             sorted(((1, 2), (1, 0), (1, 1))))
+
+        # TODO: add more tests
 
 
 if __name__ == "__main__":

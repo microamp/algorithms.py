@@ -20,10 +20,10 @@ def _bin_search(list_, x, idx_min=0, idx_max=0):
         idx_mid = find_idx_mid(idx_min, idx_max)
         if x == list_[idx_mid]:
             return idx_mid
-        elif x < list_[idx_mid]:
-            return _bin_search(list_, x, idx_min=idx_min, idx_max=idx_mid - 1)
-        else:
-            return _bin_search(list_, x, idx_min=idx_mid + 1, idx_max=idx_max)
+        return _bin_search(list_, x,
+                           **({"idx_min": idx_min, "idx_max": idx_mid - 1}
+                              if x < list_[idx_mid] else
+                              {"idx_min": idx_mid + 1, "idx_max": idx_max}))
 
 
 def binary_search(list_, x):

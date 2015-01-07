@@ -24,8 +24,19 @@ Problems
 | [Find the next higher number that has the same set of digits](http://stackoverflow.com/questions/9368205/given-a-number-find-the-next-higher-number-which-has-the-exact-same-set-of-digi) | [same_digits_next_bigger.py](https://github.com/microamp/algorithms.py/blob/master/same_digits_next_bigger.py) |
 | [Find the minimum insertions needed to form a Palindrome](from http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/)                          | [palindrome_insertions.py](https://github.com/microamp/algorithms.py/blob/master/palindrome_insertions.py)     |
 | [Knuth–Morris–Pratt algorithm](http://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)                                                                                 | [kmp.py](https://github.com/microamp/algorithms.py/blob/master/kmp.py)                                         |
-| [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)                                                                                                            | TODO                                                                                                           |
+| [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)                                                                                                            | [game_of_life.py](https://github.com/microamp/algorithms.py/blob/master/game_of_life.py)                       |
 | [Knapsack problem](http://en.wikipedia.org/wiki/Knapsack_problem)                                                                                                                         | TODO                                                                                                           |
+
+Goals
+-----
+
+- Recursion over imperative looping constructs such as `for`/`while`-loops (1)
+- Expressions over stateful methods and mutations
+- Even though neither is easy to achive when programming in OO, I believe mutability should be [opt-in](http://bob.ippoli.to/python-haskell-ep2014/#/mutability), not the other way around.
+
+Notes:
+
+1. Recursion is not generally considered a good practice in Python. Python is _not_ a functional programming language, and there is no TCO support in CPython after all. The focus here is more on the algorithms despite being implemented in Python.
 
 How to run tests
 ----------------
@@ -39,23 +50,15 @@ python -m tests
 Versions tested
 ---------------
 
+- Python 3.2
+- Python 3.3
 - Python 3.4
 
 TODO
 ----
 
 - More problems
-- Further optimisation
-
-Additional notes
-----------------
-
-- Most solutions here are defined in terms of recursion despite of that it is not generally considered a good practice in Python (1). The focus here is more on the algorithms, rather than the language they are implemented in.
-- Mutation of data structures was avoided as much as possible, but sometimes it is difficult to do in Python.
-
-Notes:
-
-1. Python is _not_ a functional programming language, and there is no TCO support in CPython after all.
+- Further analysis/optimisation
 
 Contributions
 -------------

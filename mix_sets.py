@@ -11,8 +11,8 @@ def _mix_sets(sets, joined=None):
     if not sets:
         return joined
     else:
-        return _mix_sets(sets[1:],
-                         joined=[add(x, [y]) for x in joined for y in sets[0]])
+        return _mix_sets(sets[1:], joined=[add(x, [y])
+                                           for x in joined for y in sets[0]])
 
 
 def mix_sets(sets):

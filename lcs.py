@@ -16,7 +16,4 @@ def lcs(x, y):
         if x[-1] == y[-1]:
             return lcs(x[:-1], y[:-1]) + x[-1]
         else:
-            if len(x) > len(y):
-                return lcs(x[:-1], y)
-            else:
-                return lcs(x, y[:-1])
+            return lcs(x[:-1], y) if len(x) > len(y) else lcs(x, y[:-1])
